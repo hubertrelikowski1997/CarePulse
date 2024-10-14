@@ -3,8 +3,11 @@ import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
 import CustomFormField from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
+import { useState } from "react";
+import { UserFormValidation } from "@/lib/validation";
+import { useRouter } from "next/navigation";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -16,23 +19,41 @@ export enum FormFieldType {
   SKELETON = "skeleton",
 }
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
-
 const PatientForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const form = useForm<z.infer<typeof UserFormValidation>>({
+    resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      username: "",
+      name: "",
+      email: "",
+      phone: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit({
+    name,
+    email,
+    phone,
+  }: z.infer<typeof UserFormValidation>) {
+    setIsLoading(true);
+
+    try {
+      const userData = {
+        name,
+        email,
+        phone,
+      };
+
+      const user = await createUser(userData);
+
+      if (user) router.push(`/patient/${user.$id}/register`);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
@@ -46,7 +67,7 @@ const PatientForm = () => {
           control={form.control}
           name="Name"
           label="Full name"
-          placeholder="enter your name"
+          placeholder="Adam"
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
@@ -55,7 +76,7 @@ const PatientForm = () => {
           control={form.control}
           name="Email address"
           label="Email address"
-          placeholder="enter your email address"
+          placeholder="Adam@.pro"
           iconSrc="/assets/icons/email.svg"
           iconAlt="email"
         />
@@ -64,12 +85,10 @@ const PatientForm = () => {
           control={form.control}
           name="Phone number"
           label="Phone number"
-          placeholder="+ 00 0342 0453 34"
-          iconSrc="/assets/icons/upload.svg"
-          iconAlt="user"
+          placeholder="(555) 123-4567"
         />
 
-        <Button type="submit">Submit</Button>
+        <SubmitButton isLoading={isLoading}> Get Started </SubmitButton>
       </form>
     </Form>
   );
