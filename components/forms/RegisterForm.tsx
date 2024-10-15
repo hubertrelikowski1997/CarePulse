@@ -13,7 +13,7 @@ import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { GenderOptions } from "@/constants";
 import { Label } from "../ui/label";
-import { Doctors } from "@/constants/index";
+import { Doctors, IdentificationTypes } from "@/constants/index";
 import { SelectItem } from "@/components/ui/select";
 import Image from "next/image";
 
@@ -258,9 +258,37 @@ const RegisterForm = ({ user }: { user: User }) => {
           />
         </div>
 
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
+        <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Identification and Verfication </h2>
+          </div>
+        </section>
+
+        {/* SelectIdentyficationType */}
+        <CustomFormField
+          fieldType={FormFieldType.SELECT}
+          control={form.control}
+          name="identificationType"
+          label="Identification Type"
+          placeholder="Select a identification type"
+        >
+          {IdentificationTypes.map((type) => (
+            <SelectItem key={type} value={type}>
+              <div className="cursor-pointer items-center gap-2">
+                <p>{type}</p>
+              </div>
+            </SelectItem>
+          ))}
+        </CustomFormField>
+
+        {/* SelectIdentificationNumber */}
+        <CustomFormField
+          fieldType={FormFieldType.INPUT}
+          control={form.control}
+          name="identificationNumber"
+          label="Identification number"
+          placeholder="ex:1235467"
+        />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
