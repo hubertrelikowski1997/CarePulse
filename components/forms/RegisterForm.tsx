@@ -177,6 +177,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           </div>
         </section>
 
+        {/* SelectDoctor */}
         <CustomFormField
           fieldType={FormFieldType.SELECT}
           control={form.control}
@@ -200,7 +201,62 @@ const RegisterForm = ({ user }: { user: User }) => {
           ))}
         </CustomFormField>
 
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
+        {/* InsuranceProvider & InsurancePolicyNumber */}
+        <div className=" flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insuranceProvider"
+            label="Insurance Provider"
+            placeholder="ex: BlueCross"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="insurancePolicyNumber"
+            label="Insurance policy number"
+            placeholder="ex: ABC1234567"
+          />
+        </div>
+
+        {/* Allergies & CurrentMedications */}
+        <div className=" flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="allergies"
+            label="Allergies(if any)"
+            placeholder="ex: Peanuts, Penicillin, Pollen"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="currentMedications"
+            label="Current medications"
+            placeholder="ex: Ibuprofen 200mg, Levothyroxine 50mg"
+          />
+        </div>
+
+        {/* FamilyMedicalHistory & PastMedicalHistory */}
+        <div className=" flex flex-col gap-6 xl:flex-row">
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="familyMedicalHistory"
+            label="Family medical history"
+            placeholder="ex: Mother had breast cancer"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="pastMedicalHistory"
+            label="Past medical history"
+            placeholder="ex: Asthma diagnosis in childhood"
+          />
+        </div>
 
         <div className="flex flex-col gap-6 xl:flex-row"></div>
         <div className="flex flex-col gap-6 xl:flex-row"></div>
