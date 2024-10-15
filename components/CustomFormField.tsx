@@ -8,6 +8,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { Input } from "@/components/ui/input";
 import { FormFieldType } from "./forms/PatientForm";
@@ -40,7 +47,6 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
     iconSrc,
     iconAlt,
     placeholder,
-    showTimeSelect,
     dateFormat,
     renderSkeleton,
   } = props;
@@ -103,8 +109,24 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           </FormControl>
         </div>
       );
+    case FormFieldType.SELECT:
+      return (
+        <FormControl>
+          <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <FormControl className="shad-select-trigger">
+              <SelectTrigger>
+                <SelectValue placeholder={placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className="shad-select-content">
+              {props.children}
+            </SelectContent>
+          </Select>
+        </FormControl>
+      );
     case FormFieldType.SKELETON:
       return renderSkeleton ? renderSkeleton(field) : null;
+
     default:
       break;
   }
