@@ -16,6 +16,7 @@ import { Label } from "../ui/label";
 import { Doctors, IdentificationTypes } from "@/constants/index";
 import { SelectItem } from "@/components/ui/select";
 import Image from "next/image";
+import FileUploader from "../FileUploader";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -274,7 +275,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         >
           {IdentificationTypes.map((type) => (
             <SelectItem key={type} value={type}>
-              <div className="cursor-pointer items-center gap-2">
+              <div className="cursor-pointer">
                 <p>{type}</p>
               </div>
             </SelectItem>
@@ -288,6 +289,19 @@ const RegisterForm = ({ user }: { user: User }) => {
           name="identificationNumber"
           label="Identification number"
           placeholder="ex:1235467"
+        />
+
+        {/* ScannedCopyOfIdentificationDocument */}
+        <CustomFormField
+          fieldType={FormFieldType.SKELETON}
+          control={form.control}
+          name="identificationDocumentId"
+          label="Scanned Copy of Identification Document"
+          renderSkeleton={(field) => (
+            <FormControl>
+              <FileUploader files={field.value} onChange={field.onChange} />
+            </FormControl>
+          )}
         />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
