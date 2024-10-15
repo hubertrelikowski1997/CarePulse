@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { FormFieldType } from "./forms/PatientForm";
@@ -23,7 +24,6 @@ import PhoneInput from "react-phone-number-input";
 import { Control } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { date } from "zod";
 
 interface CustomProps {
   control: Control<any>;
@@ -47,6 +47,8 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
     iconAlt,
     placeholder,
     dateFormat,
+    label,
+    name,
     renderSkeleton,
   } = props;
 
@@ -134,6 +136,21 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             className="shad-textArea"
             disabled={props.disabled}
           />
+        </FormControl>
+      );
+    case FormFieldType.CHECKBOX:
+      return (
+        <FormControl>
+          <div className="flex items-center gap-4">
+            <Checkbox
+              id={name}
+              checked={field.value}
+              onCheckedChange={field.onChange}
+            />
+            <label htmlFor={name} className="checkbox-label">
+              {label}
+            </label>
+          </div>
         </FormControl>
       );
     default:
