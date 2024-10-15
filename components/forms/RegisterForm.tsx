@@ -6,9 +6,8 @@ import { z } from "zod";
 import CustomFormField from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
-import { PatientFormValidation, UserFormValidation } from "@/lib/validation";
+import { PatientFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
-import { createUser } from "@/lib/actions/patient.actions";
 import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { GenderOptions } from "@/constants";
@@ -17,7 +16,7 @@ import { Doctors, IdentificationTypes } from "@/constants/index";
 import { SelectItem } from "@/components/ui/select";
 import Image from "next/image";
 import FileUploader from "../FileUploader";
-import { register } from "module";
+import { registerPatient } from "@/lib/actions/patient.actions";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -58,10 +57,10 @@ const RegisterForm = ({ user }: { user: User }) => {
         birthDate: new Date(values.birthDate),
         identificationDocument: formData,
       };
-
+      //@ts-ignore
       const patient = await registerPatient(patientData);
 
-      if (patient) router.push(`/patients/${user.id}/new-appointment`);
+      if (patient) router.push(`/patients/${user.$id}/new-appointment`);
     } catch (error) {
       console.log(error);
     }
