@@ -1,5 +1,6 @@
 import { Doctors } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
+import { formatDateTime } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -51,6 +52,16 @@ const Success = async ({
               height={100}
               className="size-6"
             />
+            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+          </div>
+          <div className="flex gap-2">
+            <Image
+              src="/assets/icons/calendar.svg"
+              height={24}
+              width={24}
+              alt="calendar"
+            />
+            <p>{formatDateTime(appointment.schedule).dateTime}</p>
           </div>
         </section>
       </div>
