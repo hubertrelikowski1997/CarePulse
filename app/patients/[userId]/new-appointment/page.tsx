@@ -1,5 +1,4 @@
 import AppointmentForm from "@/components/forms/AppointmentForm";
-import PatientForm from "@/components/forms/PatientForm";
 import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
 
@@ -24,7 +23,6 @@ export default async function NewAppointment({
             userId={userId}
             patientId={patient.$id}
           />
-
           <p className="copyright mt-10 py-12">© 2024 CarePulse copyright</p>
         </div>
       </section>
