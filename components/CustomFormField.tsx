@@ -54,14 +54,14 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   switch (fieldType) {
     case FormFieldType.INPUT:
       return (
-        <div className="flex rounded-md border border-dark-500 bg-dark-400">
+        <div className="flex rounded-md border border-blue-200 bg-dark-400">
           {iconSrc && (
             <Image
               src={iconSrc}
               alt={iconAlt || "icon"}
               height={24}
               width={24}
-              className="ml-2"
+              className="ml-2 mr-2"
             />
           )}
           <FormControl>
@@ -89,13 +89,13 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.DATE_PICKER:
       return (
-        <div className="flex rounded-md border border-dark-500 bg-dark-400">
+        <div className="flex rounded-md border border-blue-200 bg-dark-400">
           <Image
             src="/assets/icons/calendar.svg"
             height={24}
             width={24}
             alt="user"
-            className="ml-2"
+            className="ml-2 mr-2"
           />
           <FormControl>
             <DatePicker
@@ -104,7 +104,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               onChange={(date) => field.onChange(date)}
               timeInputLabel="Time:"
               dateFormat={dateFormat ?? "MM/dd/yyyy"}
-              wrapperClassName="date-picker"
+              wrapperClassName="date-picker bg-blue-200"
             />
           </FormControl>
         </div>

@@ -13,7 +13,7 @@ export default function Home({ searchParams }: SearchParamProps) {
       <section className="flex remove-scrollbar container my-auto">
         <div className="sub-container max-w-[496px]">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/logo-icon.svg"
             alt="logo"
             height={1000}
             width={1000}
@@ -24,10 +24,10 @@ export default function Home({ searchParams }: SearchParamProps) {
 
           <div className="text-14-regular mt-20 flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
-              © 2024 CarePulse copyright
+              © 2024 VisitMed copyright
             </p>
-            <Link href="?admin=true" className="text-green-500">
-              Admin
+            <Link href="?admin=true" className="text-dark-200">
+              Admin Panel Login
             </Link>
           </div>
         </div>

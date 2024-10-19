@@ -11,7 +11,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
       <section className="flex remove-scrollbar container">
         <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/logo-icon.svg"
             alt="logo"
             height={1000}
             width={1000}

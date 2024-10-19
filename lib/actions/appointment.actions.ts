@@ -79,10 +79,12 @@ export const getRecentAppointmentList = async () => {
 
     return parseStringify(data);
   } catch (error) {
-    console.log(error);
+    console.error(
+      "An error occurred while retrieving the recent appointments:",
+      error
+    );
   }
 };
-
 export const updateAppointment = async ({
   appointmentId,
   userId,

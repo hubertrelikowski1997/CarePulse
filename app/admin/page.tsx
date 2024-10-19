@@ -10,10 +10,10 @@ const Admin = async () => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
-      <header className="admin-header">
+      <header className="admin-header text-dark-400">
         <Link href="/" className="cursor-pointer">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/logo-icon.svg"
             width={162}
             height={32}
             alt="logo"
@@ -26,8 +26,8 @@ const Admin = async () => {
 
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header"> Welcome</h1>
-          <p className="text-dark-700">
+          <h1 className="header text-dark-200"> Welcome</h1>
+          <p className="text-dark-400">
             Start the day with managing new appointments
           </p>
         </section>
