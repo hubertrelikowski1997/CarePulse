@@ -23,7 +23,7 @@ export default async function NewAppointment({
             userId={userId}
             patientId={patient.$id}
           />
-          <p className="copyright mt-10 py-12">© 2024 CarePulse copyright</p>
+          <p className="copyright mt-10 py-12">© 2024 VisitMed copyright</p>
         </div>
       </section>
       <Image
