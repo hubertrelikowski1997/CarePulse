@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-      <img src="/public//assets//images//VisitMed.png" width="700" height="200" alt="Project Banner">
+      <img src="/public//assets//images//VisitMed.png" width="700" height="400" alt="Project Banner">
   <br />
 
   <div>
