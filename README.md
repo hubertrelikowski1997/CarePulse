@@ -11,13 +11,13 @@
   </div>
 
   <h3 align="center">A VisitMed Management System</h3>
-
+  <a href="https://visitmed.vercel.app/">Live website</a>
+</div>
 ## <a name="introduction">Introduction</a>
 
    <div align="center">
     An intuitive healthcare management platform that enables patients to easily register, schedule, and manage their doctor appointments. It includes administrative features for organizing, confirming, and canceling appointments, all developed with Next.js
     </div>
-</div>
 
 ## <a name="tech-stack">Tech Stack</a>
 
