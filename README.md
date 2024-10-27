@@ -1,43 +1,29 @@
-<div align="center">
-  <br />
-      <img src="/public//assets//images//VisitMed.png" width="700" height="400" alt="Project Banner">
-  <br />
+<h2>About the Application</h2>
 
-  <div>
-    <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
-    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-    <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=FD366E" alt="appwrite" />
-  </div>
+<img src="/public/visit.png" alt="Healthcare Patient Management App Screenshot">
 
-  <h3 align="center">A VisitMed Management System</h3>
-  <a href="https://visitmed.vercel.app/">Live website</a>
-</div>
+<p>This patient management system leverages modern technologies like <strong>Next.js</strong>, <strong>Appwrite</strong>, <strong>TypeScript</strong>, and <strong>TailwindCSS</strong> to create an effective platform for managing healthcare services. The app aims to streamline patient interactions and appointment management while ensuring a seamless user experience across devices.</p>
 
-## <a name="introduction">Introduction</a>
+<h2>Technology Stack</h2>
+<ul>
+    <li><strong>Next.js</strong>: Used for handling server-side rendering and managing the application UI.</li>
+    <li><strong>Appwrite</strong>: Backend solution for managing user data and authentication.</li>
+    <li><strong>TypeScript</strong>: Adds static type-checking to the JavaScript code, improving reliability and maintainability.</li>
+    <li><strong>TailwindCSS</strong>: CSS framework for creating a responsive and visually appealing interface.</li>
+    <li><strong>ShadCN</strong>: UI component library to streamline design consistency.</li>
+</ul>
 
-- An intuitive healthcare management platform that enables patients to easily register, schedule, and manage their doctor appointments. It includes administrative features for organizing, confirming, and canceling appointments, all developed with Next.js
+<h2>Key Features</h2>
+<ul>
+    <li><strong>Patient Registration</strong>: Users can create their profiles easily by signing up as a patient.</li>
+    <li><strong>Appointment Booking</strong>: Patients have the ability to schedule new appointments with doctors based on their preferences and availability.</li>
+    <li><strong>Admin Appointment Management</strong>: Administrators can view and manage all scheduled appointments efficiently.</li>
+    <li><strong>Appointment Confirmation & Scheduling</strong>: Admins are able to confirm and finalize appointment schedules.</li>
+    <li><strong>Appointment Cancellation</strong>: Allows administrators to cancel any appointment if necessary.</li>
+    <li><strong>File Upload Support</strong>: Secure storage of documents through Appwrite's file storage features.</li>
+    <li><strong>Performance Tracking</strong>: Integrated with Sentry to monitor application performance and track any issues.</li>
+    <li><strong>Fully Responsive Design</strong>: Adapts seamlessly to all devices, providing an optimal experience on desktop, tablet, and mobile.</li>
+</ul>
 
-## <a name="tech-stack">Tech Stack</a>
-
-- Next.js
-- Appwrite
-- Typescript
-- TailwindCSS
-- ShadCN
-
-## <a name="features">Features</a>
-
-- Patient Registration: Users can easily sign up and create personalized patient profiles.
-
-- Appointment Booking: Patients can conveniently schedule doctor appointments, with the option to book multiple sessions.
-
-- Appointment Management for Admins: Administrators can oversee and manage all scheduled appointments efficiently.
-
-- Appointment Confirmation and Scheduling: Admins can confirm and assign appointment times to ensure accurate scheduling.
-
-- Appointment Cancellation: Administrators can cancel appointments when necessary.
-
-- Fully Responsive Design: The application delivers a seamless experience across all devices and screen sizes.
-
-- Secure File Upload with Appwrite Storage: Users can safely upload and store files using Appwrite's storage system.
+<h2>Getting Started</h2>
+<p>Check out the live version of the application <a href="https://visitmed.vercel.app/" target="_blank">here</a>.</p>
