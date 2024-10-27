@@ -17,11 +17,11 @@ const Success = async ({
   );
 
   return (
-    <div className="flex h-screen max-h-screen px-[5%]">
+    <div className=" flex h-screen max-h-screen px-[5%]">
       <div className="success-img">
         <Link href="/">
           <Image
-            src="/assets/icons/logo-icon.svg"
+            src="/assets/icons/logo-full.svg"
             height={1000}
             width={1000}
             alt="logo"
@@ -36,15 +36,15 @@ const Success = async ({
             width={280}
             alt="success"
           />
-          <h2 className="header mb-6 max-w-[600px] text-center text-dark-200">
+          <h2 className="header mb-6 max-w-[600px] text-center">
             Your <span className="text-green-500">appointment request</span> has
             been successfully submitted!
           </h2>
-          <p className="text-dark-400">We'll be in touch shortly to confirm.</p>
+          <p>We&apos;ll be in touch shortly to confirm.</p>
         </section>
 
-        <section className="request-details text-dark-400">
-          <p>Request appointment details:</p>
+        <section className="request-details">
+          <p>Requested appointment details: </p>
           <div className="flex items-center gap-3">
             <Image
               src={doctor?.image!}
@@ -62,7 +62,7 @@ const Success = async ({
               width={24}
               alt="calendar"
             />
-            <p>{formatDateTime(appointment.schedule).dateTime}</p>
+            <p> {formatDateTime(appointment.schedule).dateTime}</p>
           </div>
         </section>
 
@@ -72,7 +72,7 @@ const Success = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 CarePulse</p>
+        <p className="copyright">© 2024 CarePluse</p>
       </div>
     </div>
   );

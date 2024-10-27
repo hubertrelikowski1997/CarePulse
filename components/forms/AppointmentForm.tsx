@@ -137,34 +137,33 @@ const AppointmentForm = ({
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
         {type === "create" && (
           <section className="mb-12 space-y-4">
-            <h1 className="header text-dark-200">New Appointment</h1>
-            <p className="text-dark-400">
-              Request a new appointment in 10 seconds
+            <h1 className="header">New Appointment</h1>
+            <p className="text-dark-700">
+              Request a new appointment in 10 seconds.
             </p>
           </section>
         )}
 
         {type !== "cancel" && (
           <>
-            {/* SelectDoctor */}
             <CustomFormField
               fieldType={FormFieldType.SELECT}
               control={form.control}
               name="primaryPhysician"
               label="Doctor"
-              placeholder="Select Doctor"
+              placeholder="Select a doctor"
             >
-              {Doctors.map(({ name, image }) => (
-                <SelectItem key={name} value={name}>
+              {Doctors.map((doctor, i) => (
+                <SelectItem key={doctor.name + i} value={doctor.name}>
                   <div className="flex cursor-pointer items-center gap-2">
                     <Image
-                      src={image}
-                      alt="doctor"
+                      src={doctor.image}
                       width={32}
                       height={32}
+                      alt="doctor"
                       className="rounded-full border border-dark-500"
                     />
-                    <p>{name}</p>
+                    <p>{doctor.name}</p>
                   </div>
                 </SelectItem>
               ))}
@@ -174,26 +173,32 @@ const AppointmentForm = ({
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name="schedule"
-              label="Select your appointment date"
+              label="Expected appointment date"
               showTimeSelect
-              dateFormat="MM/dd/yyyy - h:mm aa"
+              dateFormat="MM/dd/yyyy  -  h:mm aa"
             />
 
-            <div className=" flex flex-col gap-6 xl:flex-row">
+            <div
+              className={`flex flex-col gap-6  ${
+                type === "create" && "xl:flex-row"
+              }`}
+            >
               <CustomFormField
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="reason"
-                label="Reason for appointment"
-                placeholder="ex: Annual montly check-up"
+                label="Appointment reason"
+                placeholder="Annual montly check-up"
+                disabled={type === "schedule"}
               />
 
               <CustomFormField
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="note"
-                label="Notes"
-                placeholder="Enter notes"
+                label="Comments/notes"
+                placeholder="Prefer afternoon appointments, if possible"
+                disabled={type === "schedule"}
               />
             </div>
           </>
@@ -205,7 +210,7 @@ const AppointmentForm = ({
             control={form.control}
             name="cancellationReason"
             label="Reason for cancellation"
-            placeholder="Enter reason for cancellattion"
+            placeholder="Urgent meeting came up"
           />
         )}
 

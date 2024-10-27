@@ -10,12 +10,12 @@ const Admin = async () => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
-      <header className="admin-header text-dark-400">
+      <header className="admin-header">
         <Link href="/" className="cursor-pointer">
           <Image
-            src="/assets/icons/logo-icon.svg"
-            width={162}
+            src="/assets/icons/logo-full.svg"
             height={32}
+            width={162}
             alt="logo"
             className="h-8 w-fit"
           />
@@ -26,8 +26,8 @@ const Admin = async () => {
 
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header text-dark-200"> Welcome</h1>
-          <p className="text-dark-400">
+          <h1 className="header">Welcome 👋</h1>
+          <p className="text-dark-700">
             Start the day with managing new appointments
           </p>
         </section>
@@ -37,21 +37,19 @@ const Admin = async () => {
             type="appointments"
             count={appointments.scheduledCount}
             label="Scheduled appointments"
-            icon="/assets/icons/appointments.svg"
+            icon={"/assets/icons/appointments.svg"}
           />
-
           <StatCard
             type="pending"
             count={appointments.pendingCount}
             label="Pending appointments"
-            icon="/assets/icons/pending.svg"
+            icon={"/assets/icons/pending.svg"}
           />
-
           <StatCard
             type="cancelled"
             count={appointments.cancelledCount}
             label="Cancelled appointments"
-            icon="/assets/icons/cancelled.svg"
+            icon={"/assets/icons/cancelled.svg"}
           />
         </section>
 

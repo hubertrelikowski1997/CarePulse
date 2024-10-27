@@ -38,9 +38,9 @@ export function DataTable<TData, TValue>({
   return (
     <div className="data-table">
       <Table className="shad-table">
-        <TableHeader className="bg-blue-200 ">
+        <TableHeader className=" bg-dark-200">
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="shad-table-row-header ">
+            <TableRow key={headerGroup.id} className="shad-table-row-header">
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id}>
@@ -95,7 +95,6 @@ export function DataTable<TData, TValue>({
             alt="arrow"
           />
         </Button>
-
         <Button
           variant="outline"
           size="sm"
@@ -107,7 +106,7 @@ export function DataTable<TData, TValue>({
             src="/assets/icons/arrow.svg"
             width={24}
             height={24}
-            alt="arrow"
+            alt="arrow "
             className="rotate-180"
           />
         </Button>

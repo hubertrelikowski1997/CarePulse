@@ -36,10 +36,10 @@ const AppointmentModal = ({
         </Button>
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
-        <DialogHeader className="mb-4 space-y-3 ">
+        <DialogHeader className="mb-4 space-y-3">
           <DialogTitle className="capitalize">{type} Appointment</DialogTitle>
           <DialogDescription>
-            Please fill in the following details to {type} an appointment
+            Please fill in the following details to {type} appointment
           </DialogDescription>
         </DialogHeader>
 
